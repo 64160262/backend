@@ -59,16 +59,26 @@ export class Booking {
   @Column({ default: 0, type: 'real', nullable: true })
   booking_total_discount: number;
 
-  @Column({ default: 'cash', type: 'text' })
+  @Column({ default: 'cash', type: 'varchar', length: 255 })
   booking_payment_booking: string;
 
-  @Column({ default: 'cash', type: 'text', nullable: true })
+  @Column({ default: 'cash', type: 'varchar', length: 255, nullable: true })
   booking_payment_checkout: string;
 
-  @Column({ default: 'Not Comfrim', type: 'text', nullable: true })
+  @Column({
+    default: 'Not Comfrim',
+    type: 'varchar',
+    length: 50,
+    nullable: true,
+  })
   booking_status: string;
 
-  @Column({ default: 'Not Comfrim', type: 'text', nullable: true })
+  @Column({
+    default: 'Not Comfrim',
+    type: 'varchar',
+    length: 50,
+    nullable: true,
+  })
   booking_status_late: string;
 
   @UpdateDateColumn()
